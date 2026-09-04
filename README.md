@@ -1,36 +1,34 @@
 # Networks-Troubleshooter
 
-A practical Infrastructure as Code project for deploying and configuring an AWS EC2 web server with Terraform.
+> An Infrastructure as Code project for provisioning and configuring AWS EC2 infrastructure with Terraform.
 
 ## Overview
 
-**Networks-Troubleshooter** demonstrates how cloud infrastructure can be defined, configured, and reproduced using **Terraform**. The project is useful for learning AWS networking fundamentals, EC2 provisioning, security groups, and infrastructure automation.
+**Networks-Troubleshooter** demonstrates how cloud infrastructure can be defined, provisioned, and managed through Terraform. The project focuses on AWS compute, network access, security groups, key-pair authentication, and repeatable infrastructure workflows.
 
-## What It Does
+## Architecture
 
-- Provisions an AWS EC2 instance
-- Uses a configurable AMI and instance type
-- Supports an optional security group
-- Allows SSH and HTTP access when configured
-- Supports EC2 key-pair authentication
-- Demonstrates Infrastructure as Code with Terraform
+The project provisions an **AWS EC2 instance** and supports configurable infrastructure parameters. Network access can be controlled through an AWS security group, including SSH and HTTP access where configured.
 
-## Tech Stack
+## Technology Stack
 
-- **Terraform** — Infrastructure as Code
-- **AWS EC2** — Compute
-- **AWS Security Groups** — Network access control
+| Technology | Role |
+|---|---|
+| Terraform | Infrastructure as Code |
+| AWS EC2 | Compute infrastructure |
+| AWS Security Groups | Network access control |
 
 ## Prerequisites
 
-Before using the project, make sure you have:
+Before deploying, ensure you have:
 
 - An AWS account
 - Terraform installed
-- AWS credentials configured securely
+- Securely configured AWS credentials
 - An appropriate EC2 key pair
+- Permissions to create and manage the required AWS resources
 
-## Getting Started
+## Deployment
 
 Clone the repository:
 
@@ -45,7 +43,7 @@ Initialize Terraform:
 terraform init
 ```
 
-Review the planned infrastructure:
+Review the proposed infrastructure:
 
 ```bash
 terraform plan
@@ -57,31 +55,39 @@ Apply the configuration:
 terraform apply
 ```
 
-When you are finished, remove resources that are no longer needed:
+Remove the provisioned resources when they are no longer required:
 
 ```bash
 terraform destroy
 ```
 
-## Security Notes
+## Security
 
-Never commit AWS access keys, private SSH keys, `.tfstate` files containing sensitive information, or other secrets to GitHub. Use environment variables, AWS credential profiles, or an appropriate secrets-management solution instead.
+Never commit credentials or sensitive infrastructure data to GitHub. In particular, do not commit:
 
-## Project Goals
+- AWS access keys or secret keys
+- Private SSH keys
+- Sensitive Terraform state files
+- API credentials or other secrets
 
-- Practice AWS infrastructure provisioning
-- Understand Terraform workflows
-- Explore EC2 networking and security groups
-- Build repeatable cloud infrastructure
+Use secure credential profiles, environment variables, or a dedicated secrets-management solution instead.
+
+## Learning Objectives
+
+- Practice Infrastructure as Code with Terraform
+- Provision AWS compute resources
+- Understand EC2 networking and security groups
+- Build repeatable cloud infrastructure workflows
+- Apply basic cloud-security principles
 
 ## Contributing
 
-Suggestions, bug reports, and improvements are welcome. Open an issue or submit a pull request with a clear description of the proposed change.
+Contributions and suggestions are welcome. Open an issue for significant changes or submit a pull request with a clear description of the proposed improvement.
 
 ## License
 
-No license has been specified for this repository yet.
+No license has been specified for this repository.
 
----
+## Author
 
-Built by **PhilaSim**.
+**PhilaSim**
